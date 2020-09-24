@@ -1,0 +1,98 @@
+.skills
+    padding: 50px
+    position: relative
+
+    &__header
+        position: absolute
+        padding: 0 50px
+        left: 0
+        z-index: -1
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: row
+        // justify-content: space-between
+        align-items: center
+        text-align: center
+
+    &__beginne
+        padding: 15px
+        opacity: .5
+        border-right: 1px solid red
+        width: 20%
+        height: 100%
+        // background: silver
+
+    &__experience
+        padding: 15px
+        opacity: .5
+        border-right: 1px solid red
+        width: 30%
+        height: 100%
+        // background: green
+    
+    &__advance
+        padding: 15px
+        width: 25%
+        border-right: 1px solid red
+        opacity: .5
+        height: 100%
+        // background: red
+    
+    &__maste
+        padding: 15px
+        width: 25%
+        opacity: .5
+        height: 100%
+        // background: yellow
+
+    &__content
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: center
+        padding: 30px 0
+    
+    &__box
+        position: relative
+        width: 100%
+        min-height: 75px
+        height: 75px
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        .bar
+            position: relative
+            width: 100%
+            height: 8px
+            margin: 5px 0
+            font:
+                size: .8rem
+            background: $disabled-color / 1.5
+            border-top-right-radius: 8px
+            border-bottom-right-radius: 8px
+
+        .bar--hover
+            transition: all 1s ease-in
+            position: relative
+            width: 0
+            height: 100%
+            top: 0
+            left: 0
+            background: $accent-color
+            box-shadow: 0 0 8px $accent-color
+            border-top-right-radius: 8px
+            border-bottom-right-radius: 8px
+
+        span
+            font:
+                size: 1.3rem
+
+    &__level
+        position: absolute
+        bottom: 0
+        left: 0
+        transition: all 1s ease-in
+

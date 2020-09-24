@@ -13,35 +13,15 @@ html(lang="en" xmlns:th="http://www.thymeleaf.org")
         .mouse-follower
         main.container
             include header
+            include site-map
 
             section.content
                 include about
+                include skills
+                include experience
+                include portfolio
 
 
         script(src="assets/js/app.js")   
-
-        script.
-            window.addEventListener('mousemove', mouseFollow)
-
-            function mouseFollow(e) {
-                const mouseFollower = document.querySelector('.mouse-follower')
-
-                setTimeout(() => {
-                    mouseFollower.style.left = e.pageX + 'px';
-                    mouseFollower.style.top = e.pageY + 'px';
-                }, 100)
-
-                if (e.target.matches('li, a, button')) {
-                    setTarget(mouseFollower);
-                } else {
-                    removeTarget(mouseFollower);
-                }
-            }
-
-            function setTarget(mouseFollower) {
-                mouseFollower.classList.add('mouse-follower--target')
-            }
-
-            function removeTarget(mouseFollower) {
-                mouseFollower.classList.remove('mouse-follower--target')
-            }
+        script(src="assets/js/mouseFollower.js")
+        script(src="assets/js/progressBar.js")

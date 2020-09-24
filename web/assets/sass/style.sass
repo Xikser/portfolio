@@ -1,9 +1,11 @@
-$disabled-color: #a19e9e
+$disabled-color: #494949
 $accent-color: #fe019a
+$border-radius: 12px
     
 html
     font-size: 14px
     scroll-behavior: smooth
+    overflow-x: hidden
 
 *
     box-sizing: border-box
@@ -39,10 +41,46 @@ a
 ol, ul, li
     list-style: none
 
+.button
+    display: block
+    background: transparent
+    border: 0
+    cursor: pointer
+    color: white
+    padding: 5px 10px
+    border-radius: $border-radius
+    transition: all .3s ease
+
+    &--about
+        margin-top: 10px
+        text-transform: uppercase
+        font:
+            size: 1rem
+            weight: 600
+
+        border: 2px solid $accent-color
+
+        &:hover
+            border-radius: 0
+
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+
 .content
     display: flex
     flex-direction: column
+    max-width: 1200px
 
+.section__title
+    position: relative
+    display: block
+    font:
+        size: 2rem
+    letter-spacing: 2px
+    padding-bottom: 10px
+    border-bottom: 2px solid $disabled-color
 
 .mouse-follower
     position: absolute
@@ -64,6 +102,10 @@ ol, ul, li
         
 
 @import 'mixins'
+@import 'site-map'
 @import 'navbar'
 @import 'header'
 @import 'about'
+@import 'skills'
+@import 'experience'
+@import 'portfolio'

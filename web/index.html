@@ -35,38 +35,141 @@
           </div>
         </div>
       </header>
+      <section class="map">
+        <ul class="map__list">
+          <li class="map__item"><i class="fas fa-home fw"></i><a class="map__link"></a>
+            <div class="map__box"><span>Home</span></div>
+          </li>
+          <li class="map__item"><i class="fas fa-user fw"></i><a class="map__link"></a>
+            <div class="map__box"><span>About</span></div>
+          </li>
+          <li class="map__item"><i class="fas fa-layer-group fw"></i><a class="map__link"></a>
+            <div class="map__box"><span>Experience</span></div>
+          </li>
+          <li class="map__item"><i class="fas fa-tasks fw"></i><a class="map__link"></a>
+            <div class="map__box"><span>Projects</span></div>
+          </li>
+          <li class="map__item"><i class="fas fa-envelope fw"></i><a class="map__link"></a>
+            <div class="map__box"><span>Contact</span></div>
+          </li>
+        </ul>
+      </section>
       <section class="content">
         <section class="about">
-          <h1>About me</h1>
+          <div class="about__content">
+            <div class="about__avatar-box"><img src="images/avatar.jpg"></div>
+            <div class="about__text">
+              <h4>Hello! I'm Daniel, </h4>
+              <p>beginner web developer from Bolesławiec. I have little commercial experience but a huge will to learn and experience the world. In the future, I want to aspire to become a full stack js/python developer.</p>
+              <div class="about__info-box">
+                <div class="about__info-item">
+                  <p>Age:<span> 21</span></p>
+                </div>
+                <div class="about__info-item">
+                  <p>Phone:<span> (+48) 666 616 882</span></p>
+                </div>
+                <div class="about__info-item">
+                  <p>Country:<span> Poland</span></p>
+                </div>
+                <div class="about__info-item">
+                  <p>E-Mail:<span> Xikser@wp.pl</span></p>
+                </div>
+                <div class="about__info-item">
+                  <p>Address:<span> Bolesławiec</span></p>
+                </div>
+                <div class="about__info-item">
+                  <p>Github:<a href=""> Click Me!</a></p>
+                </div>
+                <div class="about__info-item">
+                  <button class="button button--about">Download CV</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="skills">
+          <h3 class="section__title">Skills</h3>
+          <div class="skills__header">
+            <div class="skills__beginner"><span>Beginner</span></div>
+            <div class="skills__experienced"><span>Experienced</span></div>
+            <div class="skills__advanced"><span>Advanced</span></div>
+            <div class="skills__master"><span>Master</span></div>
+          </div>
+          <div class="skills__content">
+            <div class="skills__box"><span class="skills__text">HTML</span><span class="skills__level" level="95"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">Pug</span><span class="skills__level" level="47"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">CSS</span><span class="skills__level" level="95"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">Sass / Scss</span><span class="skills__level" level="65"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">RWD</span><span class="skills__level" level="40"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">JavaScript</span><span class="skills__level" level="45"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">Gimp</span><span class="skills__level" level="95"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"><span class="skills__text">Visual Studio Code</span><span class="skills__level" level="55"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"> <span class="skills__text">WebStorm</span><span class="skills__level" level="45"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+            <div class="skills__box"> <span class="skills__text">Git</span><span class="skills__level" level="10"></span>
+              <div class="bar">
+                <div class="bar--hover"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="experience">
+          <h3 class="section__title">Experience</h3>
+          <div class="experience__content">
+            <div class="experience__box">
+              <h3></h3>
+            </div>
+          </div>
+        </section>
+        <section class="viewer"></section>
+        <section class="portfolio">
+          <h3 class="section__title">Portfolio</h3>
+          <div class="portfolio__content">
+            <div class="portfolio__box"><a><img src="images/liga.jpg"><span>Esport league</span></a></div>
+            <div class="portfolio__box"><a><img src="images/mc.png"><span>Minecraft Servers</span></a></div>
+            <div class="portfolio__box"><a><img src="images/dev.jpg"><span>Web developer</span></a></div>
+            <div class="portfolio__box"><a><img src="images/gd.jpg"><span>Graphic Designer</span></a></div>
+          </div>
         </section>
       </section>
     </main>
     <script src="assets/js/app.js">  </script>
-    <script>
-      window.addEventListener('mousemove', mouseFollow)
-      
-      function mouseFollow(e) {
-          const mouseFollower = document.querySelector('.mouse-follower')
-      
-          setTimeout(() => {
-              mouseFollower.style.left = e.pageX + 'px';
-              mouseFollower.style.top = e.pageY + 'px';
-          }, 100)
-      
-          if (e.target.matches('li, a, button')) {
-              setTarget(mouseFollower);
-          } else {
-              removeTarget(mouseFollower);
-          }
-      }
-      
-      function setTarget(mouseFollower) {
-          mouseFollower.classList.add('mouse-follower--target')
-      }
-      
-      function removeTarget(mouseFollower) {
-          mouseFollower.classList.remove('mouse-follower--target')
-      }
-    </script>
+    <script src="assets/js/mouseFollower.js"></script>
+    <script src="assets/js/progressBar.js"></script>
   </body>
 </html>
