@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Game One Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="gaming website templates">
+<meta name="keywords"
+	content="">
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/elements.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+<link rel="stylesheet"
+href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+<style>
+	.swiper-container {
+		width: 100%;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.swiper-slide {
+		background-position: center;
+		background-size: cover;
+		width: 500px;
+		height: 250px;
+		padding: 101.5px 20px;
+		background-color: rgba(0, 0, 0, .15);
+	}
+
+	.swiper-slide img {
+		width: 100%;
+	}
+</style>
+
+</head>
+
+<body>
+
+<header id="#header">
+	<div class="top-nav">
+		<div class="top-nav-mess">
+			<p>Welcome to our website!</p>
+		</div>
+
+		<div class="top-nav-line">
+		</div>
+
+		<div class="top-nav-icons">
+			<a href=""><i class="fab fa-facebook"></i></a>
+			<a href=""><i class="fab fa-twitter-square"></i></a>
+			<a href=""><i class="fab fa-steam-square"></i></a>
+		</div>
+
+		<div class="admin-panel">
+			<a class="btn btn-1c" href="login/index.php">Login</a>
+			<span th:text="'Hello, ' + ${message}"></span>
+		</div>
+
+	</div>
+
+	<nav>
+		<div class="nav-logo">
+			<p>Game<span>One</span></p>
+		</div>
+
+		<div class="nav-elements">
+			<a class="btn btn-5 btn-5a fas fa-home active" href="index.html"><span>Home</span></a>
+
+			<a class="btn btn-5 btn-5a fab fa-teamspeak" href="#two"><span>Teams</span></a>
+
+			<a class="btn btn-5 btn-5a fas fa-users" href="index.html"><span>Forums</span></a>
+
+			<a class="btn btn-5 btn-5a fas fa-shopping-cart" href="#four"><span>Shop</span></a>
+
+			<a class="btn btn-5 btn-5a fas fa-book" href="index.html"><span>Blog</span></a>
+
+			<a class="btn btn-5 btn-5a fas fa-bullhorn" href="#seven"><span>News</span></a>
+		</div>
+
+	</nav>
+
+	<div class="header-content">
+		<div class="header-title">
+			<div class="dynamic-title cd-headline clip is-full-width">
+				<span class="negsen">GameOne Gaming Theme</span><br>
+				<span>Build your own</span>
+					<span class="cd-words-wrapper">
+						<b class="is-visible">&nbsp;
+							<span class="gold-title">Power</span>
+						</b>
+		        <b>&nbsp;
+							<span class="gold-title">Dreams</span>
+						</b>
+						<b>&nbsp;
+							<span class="gold-title">Team</span>
+						</b>
+		        <b>&nbsp;
+							<span class="gold-title">Website</span>
+						</b>
+		        <b>&nbsp;
+							<span class="gold-title">Future</span>
+						</b>
+					</span><br>
+					<span class="mobile-visible">With us.</span>
+				</div>
+			</div>
+
+			<div class="header-logo">
+				<img src="images/logo.png">
+			</div>
+	</div>
+</header>
+
+<section id="one">
+	<div class="section-one-content">
+		<div class="section-one-leftside">
+			<h1>About US</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur. Curabitur scelerisque vel augue sed gravida. Sed venenatis nibh non malesuada posuere. Suspendisse in pretium justo. Nulla facilisi. Sed accumsan nulla ac est blandit, nec porttitor mi ultricies. Vivamus finibus imperdiet pharetra.</p>
+		</div>
+
+		<div class="section-one-rightside">
+			<img src="images/w5.png">
+		</div>
+	</div>
+</section>
+
+<section id="two">
+	<div class="section-two-content">
+		<!-- ITEM ONE  -->
+		<div class="section-two-item">
+			<div class="item-icon">
+				<i class="fas fa-user"></i>
+			</div>
+
+			<h3>Nickname</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur.</p>
+			<a class="btn btn-1 btn-1f" href="#">More</a>
+		</div>
+		<!-- ITEM TWO -->
+		<div class="section-two-item">
+			<div class="item-icon">
+				<i class="fas fa-user"></i>
+			</div>
+
+			<h3>Nickname</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur.</p>
+			<a class="btn btn-1 btn-1f" href="#">More</a>
+		</div>
+	<!-- ITEM THREE -->
+	<div class="section-two-item">
+		<div class="item-icon">
+			<i class="fas fa-user"></i>
+		</div>
+
+		<h3>Nickname</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur.</p>
+		<a class="btn btn-1 btn-1f" href="#">More</a>
+	</div>
+	<!-- ITEM FOUR -->
+	<div class="section-two-item">
+		<div class="item-icon">
+			<i class="fas fa-user"></i>
+		</div>
+
+		<h3>Nickname</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur.</p>
+		<a class="btn btn-1 btn-1f" href="#">More</a>
+	</div>
+	<!-- ITEM FIVE -->
+	<div class="section-two-item">
+		<div class="item-icon">
+			<i class="fas fa-user"></i>
+		</div>
+
+		<h3>Nickname</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis convallis justo, id ultricies neque dictum non. Etiam vulputate massa nec neque posuere efficitur.</p>
+		<a class="btn btn-1 btn-1f" href="#">More</a>
+	</div>
+	</div>
+</section>
+
+
+<section id="three">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	      <div class="swiper-slide">
+					<img src="images/sponsors/sponsorlogo.png">
+				</div>
+	    </div>
+</section>
+
+<section id="four">
+	<div class="section-four-content">
+
+		<div class="shop-cart">
+			<img src="images/shop/image.jpg">
+			<div class="cart-price">
+				<span>25$</span>
+			</div>
+			<div class="cart-body">
+				<h1>Knife</h1>
+				<p>Lorem Ipsum Price Lorem Ipsum Price Lorem Ipsum Price</p>
+
+				<a class="btn btn-5 btn-5a fas fa-shopping-cart" href="index.html"><span>Buy</span></a>
+			</div>
+		</div>
+
+		<div class="shop-cart">
+			<img src="images/shop/image.jpg">
+			<div class="cart-price">
+				<span>25$</span>
+			</div>
+			<div class="cart-body">
+				<h1>Knife</h1>
+				<p>Lorem Ipsum Price Lorem Ipsum Price Lorem Ipsum Price</p>
+
+				<a class="btn btn-5 btn-5a fas fa-shopping-cart" href="index.html"><span>Buy</span></a>
+			</div>
+		</div>
+
+		<div class="shop-cart mobile-display">
+			<img src="images/shop/image.jpg">
+			<div class="cart-price">
+				<span>25$</span>
+			</div>
+			<div class="cart-body">
+				<h1>Knife</h1>
+				<p>Lorem Ipsum Price Lorem Ipsum Price Lorem Ipsum Price</p>
+
+				<a class="btn btn-5 btn-5a fas fa-shopping-cart" href="index.html"><span>Buy</span></a>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section id="five">
+	<div class="section-five-content">
+		<div class="five-box">
+			<span>15</span>
+			<p>Tournaments Won</p>
+		</div>
+
+		<div class="five-box">
+			<span>300</span>
+			<p>Played Lan</p>
+		</div>
+
+		<div class="five-box">
+			<span>7</span>
+			<p>Years of experience</p>
+		</div>
+
+		<div class="five-box">
+			<span>200k</span>
+			<p>Fans on Facebook</p>
+		</div>
+	</div>
+</section>
+
+<section id="six">
+	<h1>Latest News!</h1>
+	<div class="section-six-content">
+
+		<div class="news-box">
+			<img src="images/news/image.jpg">
+			<div class="box-title">
+				<span>2019-05-14</span>
+			</div>
+			<div class="news-body">
+				<h1>Changelog 1.2.3.1</h1>
+				<p>Get the game client and join the incredible World of Warcraft. Once you install the game, follow the instructions to launch to our server. Thank you for choosing us. </p>
+
+				<a class="btn btn-1 btn-1f" style="margin: 0;" href="index.html"><span>Read More</span></a>
+			</div>
+		</div>
+
+		<div class="news-box">
+			<img src="images/news/image.jpg">
+			<div class="box-title">
+				<span>2019-05-12</span>
+			</div>
+			<div class="news-body">
+				<h1>Changelog 1.2.3.12</h1>
+				<p>Get the game client and join the incredible World of Warcraft. Once you install the game, follow the instructions to launch to our server. Thank you for choosing us. </p>
+
+				<a class="btn btn-1 btn-1f" style="margin: 0;"
+				href="index.html"><span>Read More</span></a>
+			</div>
+		</div>
+
+		<div class="news-box">
+			<img src="images/news/image.jpg">
+			<div class="box-title">
+				<span>2019-05-3</span>
+			</div>
+			<div class="news-body">
+				<h1>Changelog 1.2.2</h1>
+				<p>Get the game client and join the incredible World of Warcraft. Once you install the game, follow the instructions to launch to our server. Thank you for choosing us. </p>
+
+				<a class="btn btn-1 btn-1f" style="margin: 0;"
+				href="index.html"><span>Read More</span></a>
+			</div>
+		</div>
+</section>
+
+<section id="seven">
+	<footer>
+		<P>Copyright &copy GameOne 2019.</p>
+
+			<div class="footer-nav-line">
+			</div>
+
+			<div class="footer-media">
+				<a href=""><i class="fab fa-facebook"></i></a>
+				<a href=""><i class="fab fa-twitter-square"></i></a>
+				<a href=""><i class="fab fa-steam-square"></i></a>
+			</div>
+	</footer>
+</section>
+
+<a class="scroll-button"></a>
+	<!--SKRYPTY-->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/word-wrapper.js"></script>
+	<script src="assets/js/main.js"></script>
+
+		<!-- Slider -->
+		<script src="assets/js/swiper.min.js"></script>
+		<script>
+		    var swiper = new Swiper('.swiper-container', {
+		      effect: 'coverflow',
+		      grabCursor: true,
+		      centeredSlides: true,
+		      slidesPerView: 'auto',
+		      coverflowEffect: {
+		        rotate: 50,
+		        stretch: 0,
+		        depth: 100,
+		        modifier: 1,
+		        slideShadows : true,
+		      },
+		      pagination: {
+		        el: '.swiper-pagination',
+		      },
+		    });
+		  </script>
+
+</body>
+</html>
