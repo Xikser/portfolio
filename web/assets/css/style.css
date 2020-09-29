@@ -298,6 +298,13 @@ textarea:focus::placeholder {
   }
 }
 
+footer {
+  padding: 25px;
+  color: #fe019a;
+  font-weight: 600;
+  cursor: default;
+}
+
 .map--is-active {
   opacity: 1 !important;
   right: 25px !important;
