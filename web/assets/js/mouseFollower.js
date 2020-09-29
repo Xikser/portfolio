@@ -8,7 +8,7 @@ function mouseFollow(e) {
         mouseFollower.style.top = e.pageY + 'px';
     }, 100)
 
-    if (e.target.matches('li, li i, a, button, .viewer i')) {
+    if (e.target.matches('li, li i, a, button, .viewer i, .contact__box, .contact__box i, .contact__box input')) {
         setTarget(mouseFollower);
     } else {
         removeTarget(mouseFollower);
