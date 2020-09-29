@@ -195,14 +195,12 @@ textarea
     width: 700px
     height: 90vh
     top: 5%
-    // left: calc(50% - 420px)
     left: 0
     right: 0
     margin: 0 auto
     display: none
     z-index: 50
     background: rgba(0, 0, 0, 1)
-    // background: red
     border-radius: $border-radius
     box-shadow: 0 0 $border-radius $accent-color
 
@@ -237,6 +235,11 @@ textarea
             width: 600px
             height: 300px
             z-index: 15
+
+        &--width
+
+            img
+                width: 400px
 
     &__title
         text-transform: uppercase
@@ -291,6 +294,6 @@ footer
 @import 'header'
 @import 'about'
 @import 'skills'
-@import 'experience'
 @import 'portfolio'
+@import 'other'
 @import 'contact'
