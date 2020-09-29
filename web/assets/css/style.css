@@ -257,6 +257,10 @@ textarea:focus::placeholder {
   z-index: 15;
 }
 
+.viewer__image-box--width img {
+  width: 400px;
+}
+
 .viewer__title {
   text-transform: uppercase;
   margin: 25px 0;
@@ -721,51 +725,6 @@ footer {
 
 .skills__level, .skills__text {
   cursor: default;
-}
-
-.experience {
-  padding: 50px;
-}
-
-.experience__content {
-  width: 100%;
-  padding: 100px 0 0 0;
-}
-
-.timeline {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.timeline__box {
-  position: relative;
-  height: 120px;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.075);
-  border-radius: 12px;
-  transform: scale(1);
-  transition: all .3s ease;
-  font-size: 1.25rem;
-}
-
-.timeline__box:hover {
-  transform: scale(1.02);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.timeline__box a {
-  cursor: pointer;
-}
-
-.timeline__box-content {
-  display: none;
 }
 
 .portfolio {
