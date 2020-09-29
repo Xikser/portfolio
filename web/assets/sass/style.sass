@@ -41,6 +41,47 @@ a
 ol, ul, li
     list-style: none
 
+input
+    border: 0
+    background: transparent
+    width: 100%
+    min-width: 100%
+    outline: 0
+    appearance: none
+    caret-color: white
+    transition: .3s all
+    cursor: text
+
+    &::placeholder
+        color: white
+
+    &:focus::placeholder
+        color: transparent
+
+textarea
+    min-width: 100%
+    max-width: 100%
+    cursor: text
+    white-space: nowrap
+    outline: 0
+    color: black
+    appearance: none
+    overflow: hidden
+    width: auto
+    resize: none
+    height: auto
+    margin: 0
+    padding: 0 0 0 5px
+    caret-color: white
+    border: 0
+    background: transparent
+
+    &::placeholder
+        color: white
+
+    &:focus::placeholder
+        color: transparent
+
 .button
     position: relative
     display: block
@@ -97,6 +138,16 @@ ol, ul, li
         text-align: center
         min-width: 70px
         padding: 5px 10px
+        border: 2px solid $accent-color
+
+        &:hover
+            border-radius: 0
+
+    &--contact
+        margin-top: 15px
+        align-self: flex-end
+        font:
+            size: 1.2rem
         border: 2px solid $accent-color
 
         &:hover
