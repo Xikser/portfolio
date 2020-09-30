@@ -22,6 +22,7 @@ function displayCurrentViewer(viewer) {
     createBlur();
     preventScroll();
     createCloseIcon(viewer);
+    disableMap(viewer);
 }
 
 function createBlur() {
@@ -48,7 +49,8 @@ function createCloseIcon(viewer) {
 function closeViewer() {
     this.parentNode.style.display = 'none'
     removeBlur();
-    unlockScroll();
+    allowScroll();
+    activeMap();
 }
 
 function removeBlur() {
@@ -56,7 +58,18 @@ function removeBlur() {
     portfolioSection.removeChild(blur)
 }
 
-function unlockScroll() {
+function allowScroll() {
     const body = document.body;
     body.style.overflowY = 'auto';
+}
+
+//set site-map status when viewer is active
+function disableMap(viewer) {
+    if (viewer.style.display === 'flex') {
+        siteMap.classList.remove('map--is-active');
+    }
+}
+
+function activeMap() {
+    siteMap.classList.add('map--is-active')
 }
