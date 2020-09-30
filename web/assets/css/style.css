@@ -347,6 +347,10 @@ footer {
   justify-content: center;
 }
 
+.map__item a {
+  color: black;
+}
+
 .map__item i {
   cursor: pointer;
   font-size: 1.5rem;
@@ -450,6 +454,7 @@ footer {
   padding: 5px 10px;
   z-index: 1;
   transform: scale(1);
+  cursor: pointer;
 }
 
 .nav__item:hover {
