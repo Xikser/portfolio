@@ -1,3 +1,38 @@
+//navbar
+
+const header = document.querySelector('.header');
+const about = document.querySelector('.about');
+const skills = document.querySelector('.skills');
+const projects = document.querySelector('.portfolio');
+const contact = document.querySelector('.contact')
+
+const navbar = document.querySelector('.nav');
+const navLink = document.querySelectorAll('.nav__link');
+
+const linkMap = new Map();
+
+document.querySelectorAll('.link--home').forEach(e => linkMap.set(e, header));
+document.querySelectorAll('.link--about').forEach(e => linkMap.set(e, about));
+document.querySelectorAll('.link--skills').forEach(e => linkMap.set(e, skills));
+document.querySelectorAll('.link--projects').forEach(e => linkMap.set(e, projects));
+document.querySelectorAll('.link--contact').forEach(e => linkMap.set(e, contact));
+
+for(const link of linkMap.keys()) {
+    link.addEventListener('click', scrollPage);
+}
+
+function scrollPage() {
+    const section = linkMap.get(this);
+    const offsetTop = section.offsetTop;
+    
+    scroll({
+         top: offsetTop,
+         behavior: "smooth"
+     });
+}
+
+
+
 //show sitemap on page scroll
 const siteMap = document.querySelector('.map');
 
@@ -23,9 +58,9 @@ for(const clipboard of clipboards) {
 function copyText() {
     const elem = this.querySelector(':scope .contact__clipboard');
 
-     elem.select();
-     document.execCommand('copy');
-     createTooltip(this)
+    elem.select();
+    document.execCommand('copy');
+    createTooltip(this)
 }
 
 function createTooltip(parent) {
