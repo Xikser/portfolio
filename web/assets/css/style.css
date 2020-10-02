@@ -121,6 +121,7 @@ textarea:focus::placeholder {
   color: white;
   padding: 5px 10px;
   border-radius: 0;
+  border: 2px solid var(--accent-color);
   transition: all .3s ease;
 }
 
@@ -149,52 +150,24 @@ textarea:focus::placeholder {
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid var(--accent-color);
-}
-
-.button--about:hover {
-  border-radius: 0;
-}
-
-.button--portfolio:hover {
-  color: var(--accent-color);
 }
 
 .button--portfolio-info {
   text-transform: uppercase;
-  border: 2px solid var(--accent-color);
   font-size: 1.2rem;
   font-weight: 600;
-}
-
-.button--portfolio-info:hover {
-  border-radius: 0;
 }
 
 .button--viewer {
   text-align: center;
   min-width: 70px;
   padding: 5px 10px;
-  border: 2px solid var(--accent-color);
-}
-
-.button--viewer:hover {
-  border-radius: 0;
 }
 
 .button--contact {
   margin-top: 15px;
   align-self: flex-end;
   font-size: 1.2rem;
-  border: 2px solid var(--accent-color);
-}
-
-.button--contact:hover {
-  border-radius: 0;
-}
-
-.button--reset-color:hover::after {
-  height: 100%;
 }
 
 .container {
