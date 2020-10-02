@@ -1,5 +1,5 @@
 doctype
-html(lang="en" xmlns:th="http://www.thymeleaf.org")
+html(lang="en")
     head
         title hello world!
         meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
@@ -22,6 +22,8 @@ html(lang="en" xmlns:th="http://www.thymeleaf.org")
                 include other
                 include contact
 
+                include panel/panel
+
         footer.footer
             p Copyright 2020 | Daniel Wyskup
             
@@ -31,3 +33,4 @@ html(lang="en" xmlns:th="http://www.thymeleaf.org")
         script(src="assets/js/mouseFollower.js")
         script(src="assets/js/progressBar.js")
         script(src="assets/js/projectViewer.js")
+        script(src="assets/js/panel.js")
