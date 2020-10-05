@@ -1,3 +1,15 @@
+var targets = [
+    'li',
+    'li i',
+    'a',
+    'button',
+    '.viewer i',
+    '.contact__box',
+    '.contact__box i',
+    '.contact__box input',
+    '.panel__icon'
+];
+
 window.addEventListener('mousemove', mouseFollow)
 
 function mouseFollow(e) {
@@ -8,11 +20,25 @@ function mouseFollow(e) {
         mouseFollower.style.top = e.pageY + 'px';
     }, 100)
 
-    if (e.target.matches('li, li i, a, button, .viewer i, .contact__box, .contact__box i, .contact__box input, .panel__icon')) {
+    if (e.target.matches(targets)) {
         setTarget(mouseFollower);
     } else {
         removeTarget(mouseFollower);
     }
+
+    if (e.target.matches('.circle')) {
+        hideFollower(mouseFollower);
+    } else {
+        showFollower(mouseFollower);
+    }
+}
+
+function hideFollower(mouseFollower) {
+    mouseFollower.style.opacity = '0';
+}
+
+function showFollower(mouseFollower) {
+    mouseFollower.style.opacity = '.5';
 }
 
 function setTarget(mouseFollower) {
