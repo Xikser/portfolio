@@ -1,6 +1,7 @@
 const panelOverlap = document.querySelector('.overlap');
 const panel = document.querySelector('.panel');
-const activeClass = 'panel--is-active';
+const panelIsActiveClass = 'panel--is-active';
+const overlapIsActiveClass = 'overlap--is-active';
 
 panelOverlap.addEventListener('click', showPanel);
 
@@ -8,8 +9,8 @@ function showPanel() {
     const panelCogIcon = panelOverlap.querySelector('.panel__icon.fas.fa-cog');
     const panelTimesIcon = panelOverlap.querySelector('.panel__icon.fas.fa-times');
 
-    panelOverlap.classList.add(activeClass)
-    panel.classList.add(activeClass)
+    panelOverlap.classList.add(overlapIsActiveClass)
+    panel.classList.add(panelIsActiveClass)
     changePanelIcon(panelCogIcon, panelTimesIcon);
 }
 
@@ -28,8 +29,8 @@ function changePanelIcon(cog, times) {
 }
 
 function hidePanel() {
-    panelOverlap.classList.remove(activeClass)
-    panel.classList.remove(activeClass)
+    panelOverlap.classList.remove(overlapIsActiveClass)
+    panel.classList.remove(panelIsActiveClass)
 }
 
 
