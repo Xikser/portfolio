@@ -170,6 +170,21 @@ textarea:focus::placeholder {
   font-size: 1.2rem;
 }
 
+.button--reset-color {
+  transform: scale(1);
+  border: 0;
+  font-weight: 600;
+}
+
+.button--reset-color:hover::after {
+  height: 0;
+}
+
+.button--reset-color:hover {
+  transform: scale(1.1);
+  color: var(--accent-color);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -207,7 +222,7 @@ textarea:focus::placeholder {
 .mouse-follower--target {
   width: 75px;
   height: 75px;
-  opacity: .3;
+  opacity: .3 !important;
 }
 
 .viewer {
@@ -958,17 +973,19 @@ footer {
 
 .panel {
   position: fixed;
-  top: 200px;
+  top: 150px;
   right: -100px;
   width: 65px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.2);
   transition: all .3s ease-in;
+  text-align: center;
 }
 
 .panel p {
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .panel__icon {
@@ -980,6 +997,7 @@ footer {
   min-width: 24px;
   min-height: 24px;
   animation: rotate 3s linear infinite;
+  color: black;
 }
 
 .panel__icon:hover {
@@ -1009,12 +1027,24 @@ footer {
   right: 25px !important;
 }
 
+.overlap--is-active {
+  right: 25px !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.overlap--is-active i {
+  color: white;
+}
+
 .overlap {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+  background: white;
   position: fixed;
-  top: 160px;
-  right: 25px;
+  top: 120px;
+  right: 0;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
