@@ -1,15 +1,18 @@
 .panel
     position: fixed
-    top: 200px
+    top: 150px
     right: -100px
     width: 65px
     border-radius: $border-radius - 6px
     background: rgba(255, 255, 255, .2)
     transition: all .3s ease-in
+    text-align: center
 
     p
-        margin-top: 5px
-        margin-bottom: 15px
+        margin-top: 10px
+        margin-bottom: 10px
+        font:
+            weight: 600
 
     &__icon
         text-align: center
@@ -21,6 +24,7 @@
         min-width: 24px
         min-height: 24px
         animation: rotate 3s linear infinite;
+        color: black
 
         &:hover
             transform: rotateZ(360deg)
@@ -44,12 +48,22 @@
 .panel--is-active
     right: 25px !important
 
+.overlap--is-active
+    right: 25px !important
+    background: transparent !important
+    padding: 0 !important
+
+    i
+        color: white
+
 .overlap
     border-top-left-radius: $border-radius - 6px
     border-bottom-left-radius: $border-radius - 6px
+    background: white
     position: fixed
-    top: 160px
-    right: 25px
+    top: 120px
+    right: 0
+    padding: 5px 10px
     display: flex
     align-items: center
     justify-content: center
