@@ -47,12 +47,23 @@ const mobileNavIconTimes = document.querySelector('.mobile-icons--times');
 const mobileNavBarItems = document.querySelectorAll('.mobile-nav__item');
 const classToSetItemsStyle = 'mobile-nav--set-items-style';
 
+let mobileNavBarIsActive = false;
+
 mobileNavIconBar.addEventListener('click', () => {
     mobileNavBar.classList.add(classToSetItemsStyle)
 
     for (let i = 0; i < mobileNavBarItems.length; i++) {
         const navItem = mobileNavBarItems[i];
         navItem.style.left = '0';
+
+        mobileNavBarIsActive = true;
+    }
+
+    //prevent page scroll
+    if(mobileNavBarIsActive = true) {
+        document.documentElement.style.overflowY = 'hidden'
+    } else {
+        document.documentElement.style.overflowY = 'auto'
     }
 })
 
@@ -67,6 +78,10 @@ function hideMobileNavBar() {
     setTimeout(() => {
         mobileNavBar.classList.remove(classToSetItemsStyle)
     }, 2500)
+
+    //allow page scroll
+    mobileNavBarIsActive = false;
+    document.documentElement.style.overflowY = 'auto'
 }
 
 
