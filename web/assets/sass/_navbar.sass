@@ -150,6 +150,17 @@
         &__item:nth-child(4)
             left: 100% 
 
+        &__link
+            padding: 15px 25px
+            transform: scale(1)
+            transition: all .3s ease
+
+            &:hover
+                transform: scale(1.1)
+                color: $accent-color
+                font:
+                    weight: 600
+
 @for $i from 1 through 4 
     .mobile-nav__item:nth-child(#{$i}n) 
         transition-delay: #{$i * 0.5}s

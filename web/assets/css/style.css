@@ -626,6 +626,16 @@ footer {
   .mobile-nav__item:nth-child(4) {
     left: 100%;
   }
+  .mobile-nav__link {
+    padding: 15px 25px;
+    transform: scale(1);
+    transition: all .3s ease;
+  }
+  .mobile-nav__link:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+    font-weight: 600;
+  }
 }
 
 .mobile-nav__item:nth-child(1n) {
