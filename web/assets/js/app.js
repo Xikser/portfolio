@@ -1,5 +1,4 @@
 //navbar
-
 const header = document.querySelector('.header');
 const about = document.querySelector('.about');
 const skills = document.querySelector('.skills');
@@ -18,19 +17,57 @@ document.querySelectorAll('.link--projects').forEach(e => linkMap.set(e, project
 document.querySelectorAll('.link--contact').forEach(e => linkMap.set(e, contact));
 
 for(const link of linkMap.keys()) {
-    link.addEventListener('click', scrollPage);
+    link.addEventListener('click', detectWidth);
 }
 
-function scrollPage() {
-    const section = linkMap.get(this);
+function detectWidth() {
+    const section = linkMap.get(this)
+    var deviceWidth = window.innerWidth;
+    scrollPage(section, deviceWidth);
+}
+
+function scrollPage(section, width) {
     const offsetTop = section.offsetTop;
     
-    scroll({
+     if (width <= 736) {
+        hideMobileNavBar();
+     }
+    
+     scroll({
          top: offsetTop,
          behavior: "smooth"
      });
 }
 
+
+//mobile navbar
+const mobileNavBar = document.querySelector('.mobile-nav')
+const mobileNavIconBar = document.querySelector('.mobile-icons--bar');
+const mobileNavIconTimes = document.querySelector('.mobile-icons--times');
+const mobileNavBarItems = document.querySelectorAll('.mobile-nav__item');
+const classToSetItemsStyle = 'mobile-nav--set-items-style';
+
+mobileNavIconBar.addEventListener('click', () => {
+    mobileNavBar.classList.add(classToSetItemsStyle)
+
+    for (let i = 0; i < mobileNavBarItems.length; i++) {
+        const navItem = mobileNavBarItems[i];
+        navItem.style.left = '0';
+    }
+})
+
+mobileNavIconTimes.addEventListener('click', hideMobileNavBar);
+
+function hideMobileNavBar() {
+    mobileNavBarItems[0].style.left = '-100%'
+    mobileNavBarItems[1].style.left = '100%'
+    mobileNavBarItems[2].style.left = '-100%'
+    mobileNavBarItems[3].style.left = '100%'
+
+    setTimeout(() => {
+        mobileNavBar.classList.remove(classToSetItemsStyle)
+    }, 2500)
+}
 
 
 //show sitemap on page scroll
