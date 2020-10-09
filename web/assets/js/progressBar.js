@@ -32,35 +32,27 @@ function loadHoverBar(level, bar) {
 }
 
 function loadSpan(level, span) {
-    const beginner = 'Beginner';
-    const experienced = 'Experienced';
-    const advanced = 'Advanced';
-    const master = 'Master';
+    const basic = 'Basic';
+    const intermediate = 'Intermediate';
+    const proficient = 'Proficient';
     
     switch(true) {
-        case level <= 10:  
-            span.innerHTML = beginner;
+        case level <= 20:  
+            span.innerHTML = basic;
             var spanWidth = span.offsetWidth;
             span.style.left = 'calc(' + level + '%' + ' - ' + spanWidth + 'px' + ')';
 
             break; 
             
-        case level > 10 && level <= 50:
-            span.innerHTML = experienced     
+        case level > 20 && level <= 75:
+            span.innerHTML = intermediate     
             var spanWidth = span.offsetWidth;
             span.style.left = 'calc(' + level + '%' + ' - ' + spanWidth + 'px' + ')';
 
             break;
 
-        case level > 50 && level <= 90:
-            span.innerHTML = advanced;
-            var spanWidth = span.offsetWidth;
-            span.style.left = 'calc(' + level + '%' + ' - ' + spanWidth + 'px' + ')';
-
-            break;
-
-        case level > 90 && level <= 100:
-            span.innerHTML = master;
+        case level > 75 && level <= 100:
+            span.innerHTML = proficient;
             var spanWidth = span.offsetWidth;
             span.style.left = 'calc(' + level + '%' + ' - ' + spanWidth + 'px' + ')';
 
