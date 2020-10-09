@@ -1,5 +1,19 @@
+const viewerTargets = [
+    '.viewer',
+    '.viewer__content',
+    '.viewer__image-box',
+    '.viewer__image-box img',
+    '.viewer__title',
+    '.viewer__text',
+    '.viewer__buttons',
+    '.button--viewer',
+    '.button--portfolio-info'
+]
+
 const portfolioSection = document.querySelector('.portfolio')
+const portfolioContentSection = document.querySelector('.portfolio__content');
 const viewerButton = document.querySelectorAll('.button--portfolio-info')
+let viewerIsActive = false;
 
 for(const button of viewerButton) {
     button.addEventListener('click', getCurrentViewer)
@@ -14,17 +28,27 @@ function getCurrentViewer() {
 }
 
 function displayCurrentViewer(viewer) {
-    const sectionContent = document.querySelector('.portfolio__content');
+    const icon = viewer.querySelector(':scope i.fa-times')
     
     viewer.style.display = 'flex'
-    sectionContent.appendChild(viewer)
+    viewer.classList.add('viewer--is-active')
+    portfolioContentSection.appendChild(viewer);
+    viewerIsActive = true;
     
     createBlur();
     preventScroll();
-    createCloseIcon(viewer);
     disableMap(viewer);
-}
 
+    icon.addEventListener('click', () => {
+        closeViewer(viewer)
+    }) 
+
+    if(viewerIsActive === true) {
+        window.addEventListener("click", checkTarget);
+        window.addEventListener('keydown', checkKey);
+    }
+}
+    
 function createBlur() {
     let blur = document.createElement('div');
     blur.classList.add('blur');
@@ -37,20 +61,22 @@ function preventScroll() {
     body.style.overflowY = 'hidden';
 }
 
-function createCloseIcon(viewer) {
-    let closeIcon = document.createElement('i')
-    closeIcon.classList.add('fas')
-    closeIcon.classList.add('fa-times')
-    
-    viewer.appendChild(closeIcon)
-    closeIcon.addEventListener('click', closeViewer)
-}
-
-function closeViewer() {
-    this.parentNode.style.display = 'none'
+function closeViewer(viewer) {
+    viewer.style.display = 'none'
+    viewer.classList.remove('viewer--is-active')
     removeBlur();
     allowScroll();
     activeMap();
+    deleteViewerFromSection(viewer)
+    
+    viewerIsActive = false;
+
+    window.removeEventListener('click', checkTarget)
+    window.removeEventListener('keydown', checkKey)
+}
+
+function deleteViewerFromSection(viewer) {
+    portfolioContentSection.removeChild(viewer);
 }
 
 function removeBlur() {
@@ -63,6 +89,7 @@ function allowScroll() {
     body.style.overflowY = 'auto';
 }
 
+
 //set site-map status when viewer is active
 function disableMap(viewer) {
     if (viewer.style.display === 'flex') {
@@ -72,4 +99,23 @@ function disableMap(viewer) {
 
 function activeMap() {
     siteMap.classList.add('map--is-active')
+}
+
+
+//hide viewer on window click
+function checkTarget(e) {
+    const currentViewer = document.querySelector('.viewer--is-active')
+    if(!e.target.matches(viewerTargets)) {
+        closeViewer(currentViewer)
+        deleteViewerFromSection(currentViewer)
+    }
+}
+
+//hide viewer on escape click
+function checkKey(e) {
+    const currentViewer = document.querySelector('.viewer--is-active')
+    if (e.key === 'Escape') {
+        closeViewer(currentViewer)
+        deleteViewerFromSection(currentViewer)
+    }
 }
