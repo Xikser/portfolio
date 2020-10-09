@@ -7,7 +7,7 @@ const disableHeight = 1970;
 window.addEventListener('scroll', loadContent);
 
 function loadContent() {
-    var windowHeight = this.pageYOffset;
+    const windowHeight = this.pageYOffset;
 
     for(const box of boxArray) {    
         const levelSpan = box.children[1];
@@ -22,7 +22,7 @@ function loadContent() {
 }
 
 function getLevel(box, levelSpan, hoverBar) {
-    var level = box.children[1].getAttribute('level');
+    const level = box.children[1].getAttribute('level');
     loadSpan(level, levelSpan);
     loadHoverBar(level, hoverBar)
 }
