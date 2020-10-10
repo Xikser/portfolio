@@ -60,7 +60,7 @@ ol, ul, li {
   list-style: none;
 }
 
-input {
+input[type='text'] {
   border: 0;
   background: transparent;
   width: 100%;
@@ -72,11 +72,11 @@ input {
   cursor: text;
 }
 
-input::placeholder {
+input[type='text']::placeholder {
   color: white;
 }
 
-input:focus::placeholder {
+input[type='text']:focus::placeholder {
   color: transparent;
 }
 
@@ -381,7 +381,7 @@ footer {
   display: flex;
   width: 65px;
   background: white;
-  top: 60%;
+  top: 50%;
   right: -100px;
   padding: 10px 0;
   opacity: 0;
@@ -1242,7 +1242,7 @@ footer {
   z-index: 40;
 }
 
-.panel p {
+.panel__text {
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: 600;
@@ -1360,5 +1360,53 @@ footer {
 
 .col-2 .circle:nth-child(4) {
   background: #3500ff;
+}
+
+.toggle {
+  position: relative;
+  border-top: 1px solid var(--accent-color);
+  padding: 7px 0 0 0;
+  margin: 7px 0 0 0;
+  flex-direction: column;
+  display: flex;
+}
+
+.toggle--text {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.toggle--slider {
+  position: relative;
+  width: 50px;
+  height: 23px;
+  background: black;
+  cursor: pointer;
+  margin: 10px auto 0;
+  border-radius: 50px;
+  border: 2px solid var(--accent-color);
+  transition: all .3s ease-in;
+}
+
+.toggle--slider::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  transition: all .3s ease-in;
+  transform: translateX(0px);
+}
+
+.toggle--slider-checked {
+  background: transparent;
+}
+
+.toggle--slider-checked::before {
+  background: #585858;
+  transform: translateX(27px);
 }
 /*# sourceMappingURL=style.css.map */
