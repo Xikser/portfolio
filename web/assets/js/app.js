@@ -95,9 +95,8 @@ document.addEventListener('scroll', () => {
         siteMap.classList.add('map--is-active')
     } else {
         siteMap.classList.remove('map--is-active');
-    }
+    }  
 });
-
 
 
 //contact clipboard
