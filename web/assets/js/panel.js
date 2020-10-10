@@ -9,9 +9,10 @@ function showPanel() {
     const panelCogIcon = panelOverlap.querySelector('.panel__icon.fas.fa-cog');
     const panelTimesIcon = panelOverlap.querySelector('.panel__icon.fas.fa-times');
 
-    panelOverlap.classList.add(overlapIsActiveClass)
     panel.classList.add(panelIsActiveClass)
+    panelOverlap.classList.add(overlapIsActiveClass)
     changePanelIcon(panelCogIcon, panelTimesIcon);
+    moveSiteMap();
 }
 
 function changePanelIcon(cog, times) {
@@ -25,6 +26,14 @@ function changePanelIcon(cog, times) {
         hidePanel();
         cog.style.setProperty('display', 'block')
         times.style.setProperty('display', 'none')
+    }
+}
+
+function moveSiteMap() {
+    if(panel.classList.contains(panelIsActiveClass)) {
+        siteMap.style.top = '80' + '%';
+    } else {
+        siteMap.style.top = '50' + '%';
     }
 }
 
@@ -166,3 +175,19 @@ function resetColor() {
     document.documentElement.style.setProperty('--accent-color', pinkColor)
     changeButtonColor('--button-font-color', whiteColor)
 }
+
+
+
+//on / off mouse follower
+
+const toggle = document.querySelector('.toggle')
+const toggleSlider = toggle.querySelector('.toggle--slider')
+const toggleSliderIsChecked = "toggle--slider-checked"
+
+toggleSlider.addEventListener('click', () => {
+    if (toggleSlider.classList.contains(toggleSliderIsChecked)) {
+      toggleSlider.classList.remove(toggleSliderIsChecked);
+    } else {
+      toggleSlider.classList.add(toggleSliderIsChecked);
+    }
+});
