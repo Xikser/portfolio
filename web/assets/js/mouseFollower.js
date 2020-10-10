@@ -31,6 +31,10 @@ function mouseFollow(e) {
     } else {
         showFollower(mouseFollower);
     }
+    
+    if (toggleSlider.classList.contains(toggleSliderIsChecked)) {
+        hideFollower(mouseFollower);
+    }
 }
 
 function hideFollower(mouseFollower) {
