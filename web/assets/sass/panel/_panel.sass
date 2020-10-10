@@ -9,7 +9,7 @@
     text-align: center
     z-index: 40
 
-    p
+    &__text
         margin-top: 10px
         margin-bottom: 10px
         font:
@@ -115,5 +115,47 @@
             background: rgb(53, 0, 255)
 
     
-    
+.toggle
+    position: relative
+    border-top: 1px solid $accent-color
+    padding: 7px 0 0 0
+    margin: 7px 0 0 0
+    flex-direction: column
+    display: flex
+
+    &--text
+        font:
+            size: 1rem
+        margin: 5px 0
+
+    &--slider
+        position: relative
+        width: 50px
+        height: 23px
+        background: black
+        cursor: pointer
+        margin: 10px auto 0
+        border-radius: 50px
+        border: 2px solid $accent-color
+        transition: all .3s ease-in
+
+        &::before
+            position: absolute
+            content: ''
+            top: 0
+            left: 0
+            width: 18px
+            height: 18px
+            background: white
+            border-radius: 50%
+            transition: all .3s ease-in
+            transform: translateX(0px)
+
+    &--slider-checked
+        background: transparent
+
+        &::before
+            background: $disabled-color * 1.2
+            transform: translateX(27px)
+
         
