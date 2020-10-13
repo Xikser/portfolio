@@ -56,11 +56,6 @@ function createBlur() {
     portfolioSection.appendChild(blur)
 }
 
-function preventScroll() {
-    const body = document.body;
-    body.style.overflowY = 'hidden';
-}
-
 function closeViewer(viewer) {
     viewer.style.display = 'none'
     viewer.classList.remove('viewer--is-active')
