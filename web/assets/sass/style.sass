@@ -308,8 +308,9 @@ textarea
     background: rgba(0, 0, 0, .8)
     z-index: 47
 
+$progress-bar-height: 15px
 
-.loader
+.preloader
     position: fixed
     top: 0
     left: 0
@@ -318,60 +319,48 @@ textarea
     display: flex
     flex-direction: row
     z-index: 10000
-    transition: all .5s ease-in
+    opacity: 1
+    transition: opacity 2s ease
 
-    &--preloader
-
-    &--afterloader
-
-    &--child
+    &--container
         position: relative
+        width: 100%
+        height: 100%
+        background: black
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &--bar
+        position: relative
+        width: 750px
+        height: $progress-bar-height
+        background: $disabled-color / 3
+        border-radius: $border-radius / 2
+
+    &--bar-loader
+        position: absolute
+        content: ''
         top: 0
         left: 0
-        bottom: 0
-        right: 0
-        margin: 0
-        padding: 0
-        width: 16.666666666%
-        height: 100%
-        transform: scale(1)
-        // background: #181819
-        background: black
-        transition: all 1.2s ease-in
-        border-right: 1px solid $accent-color
-        border-left: 1px solid $accent-color
+        width: 0
+        background: $accent-color
+        transition: all 2.2s ease-in-out
+        height: $progress-bar-height
+        border-radius: $border-radius / 2
 
+    &--counter
+        position: absolute
+        top: 10%
+        right: 50%
+        transform: translateX(50%)
 
-.loader--child:nth-child(1)
-    border-bottom: 1px solid $accent-color
-    transition-delay: #{0}s
+        span
+            font:
+                size: 20rem
+            color: $disabled-color / 4
+            cursor: default
 
-.loader--child:nth-child(5n + 2) 
-    border-top: 1px solid $accent-color
-    transition-delay: #{.3}s
-
-.loader--child:nth-child(5n + 3) 
-    border-bottom: 1px solid $accent-color
-    transition-delay: #{.5}s
-
-    
-//centered
-.loader--child:nth-child(5n + 4) 
-    border-top: 1px solid $accent-color
-    transition-delay: #{.7}s
-
-
-.loader--child:nth-child(5n + 5) 
-    border-bottom: 1px solid $accent-color
-    transition-delay: #{.9}s
-
-.loader--child:nth-child(5n + 6) 
-    border-top: 1px solid $accent-color
-    transition-delay: #{1.1}s
-
-.loader--child:nth-child(5n + 7) 
-    border-bottom: 1px solid $accent-color
-    transition-delay: #{1.3}s
 
 @media screen and (max-width: 736px)
     .viewer
@@ -408,6 +397,18 @@ textarea
 
         &__buttons
             bottom: 120px
+
+    .preloader
+
+        &--container
+            padding: 0 25px
+
+        &--counter
+            top: 25%
+
+            span
+                font:
+                    size: 10rem
 
 footer
     padding: 25px
