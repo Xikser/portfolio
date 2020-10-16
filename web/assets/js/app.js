@@ -1,3 +1,5 @@
+var body = document.body
+
 //global function for prevent scroll
 function preventScroll() {
     const body = document.body;
@@ -143,89 +145,4 @@ function displayTooltip(parent, tooltip) {
 
 function hideTooltip(parent, tooltip) {
     parent.removeChild(tooltip)
-}
-
-
-//preloader
-
-window.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', scrollTop)
-
-    constructPreloader()
-        .then((preloader) => {
-            const TIME = 2000   
-
-            setTimeout(() => {
-                hidePreloader(preloader);
-            }, TIME)
-        })
-})
-
-const createLoader = () => {
-    return new Promise((resolve) => {
-        const preloader = document.createElement('div')
-        preloader.classList.add('loader')
-
-        resolve(preloader);
-    })
-}
-
-const createLoaderChild = (preloader) => {
-    for (let i = 0; i <= 6; i++) {
-        const preloaderChild = document.createElement('div')
-        preloaderChild.classList.add('loader--child')
-
-        addChildsToLoader(preloader, preloaderChild)
-    }
-}
-
-const addChildsToLoader = (preloader, child) => { 
-    for(let i = 0; i <= 6; i++) {
-        preloader.appendChild(child)
-        return(preloader)
-    }
-}
-
-const addLoaderToBody = (preloader) => {
-    return new Promise((resolve) => {
-        const body = document.body
-        body.appendChild(preloader)
-
-        resolve(body)
-    })
-}
-
-async function constructPreloader() {
-    const preloader = await createLoader()
-    await createLoaderChild(preloader);
-    await addLoaderToBody(preloader);
-
-    return preloader
-}
-
-function hidePreloader(preloader) {
-    window.removeEventListener('scroll', scrollTop)
-
-    const preloaderChilds = preloader.querySelectorAll(':scope .loader--child')
-
-    for(let i = 0; i < preloaderChilds.length; i++) {  
-        preloaderChilds[0].style.top = '-120%'
-        preloaderChilds[1].style.top = '120%'
-        preloaderChilds[2].style.top = '-120%'
-
-        preloaderChilds[3].style.top = '120%'
-
-        preloaderChilds[4].style.top = '-120%'
-        preloaderChilds[5].style.top = '120%'
-        preloaderChilds[6].style.top = '-120%'
-    }
-
-    setTimeout(() => {
-        deletePreloader(preloader);
-    }, 2500)
-}
-
-function deletePreloader(preloader) {
-    document.body.removeChild(preloader)
-    document.body.style.overflowY = 'auto'
 }
