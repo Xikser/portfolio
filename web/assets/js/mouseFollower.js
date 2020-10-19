@@ -34,6 +34,7 @@ function mouseFollow(e) {
     
     if (toggleSlider.classList.contains(toggleSliderIsChecked)) {
         hideFollower(mouseFollower);
+        removeTarget(mouseFollower)
     }
 }
 
