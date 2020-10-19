@@ -3,7 +3,6 @@ $accent-color: var(--accent-color)
 $font-color: var(--font-color)
 $button-font-color: var(--button-font-color)
 $border-radius: 12px
-    
 
 html
     font:
@@ -23,8 +22,7 @@ body
     color: $font-color
     font:
         family: 'Rubik', sans-serif
-    background:
-        color: #000
+    background-color: #000
     width: 100%
 
 h1
@@ -157,15 +155,15 @@ textarea
         text-transform: uppercase
         font:
             size: 1rem
-            weight: 600
-            
+        weight: 600
+
     &--portfolio
 
     &--portfolio-info
-        text-transform: uppercase   
+        text-transform: uppercase
         font:
             size: 1.2rem
-            weight: 600
+        weight: 600
 
     &--viewer
         text-align: center
@@ -190,7 +188,6 @@ textarea
         &:hover
             transform: scale(1.1)
             color: $accent-color
-
 
 .container
     position: relative
@@ -228,7 +225,7 @@ textarea
         width: 75px
         height: 75px
         opacity: .3 !important
-        
+
 .viewer
     position: fixed
     width: 700px
@@ -320,7 +317,7 @@ $progress-bar-height: 15px
     flex-direction: row
     z-index: 10000
     opacity: 1
-    transition: opacity 2s ease
+    transition: opacity 1s ease
 
     &--container
         position: relative
@@ -345,7 +342,7 @@ $progress-bar-height: 15px
         left: 0
         width: 0
         background: $accent-color
-        transition: all 2.2s ease-in-out
+        transition: width 2.2s ease-in-out
         height: $progress-bar-height
         border-radius: $border-radius / 2
 
@@ -360,7 +357,6 @@ $progress-bar-height: 15px
                 size: 20rem
             color: $disabled-color / 4
             cursor: default
-
 
 @media screen and (max-width: 736px)
     .viewer
