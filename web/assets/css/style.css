@@ -547,13 +547,13 @@ footer {
   margin: 0 25px;
 }
 
-.nav__logo a {
+.nav__logo span {
   position: relative;
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.nav__logo a::before {
+.nav__logo span::before {
   position: absolute;
   content: 'Daniel Wyskup';
   color: var(--accent-color);
@@ -565,7 +565,7 @@ footer {
   transition: all .3s ease;
 }
 
-.nav__logo a:hover::before {
+.nav__logo span:hover::before {
   top: 0;
   opacity: 1;
 }
