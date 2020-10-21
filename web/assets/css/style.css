@@ -351,36 +351,16 @@ textarea:focus::placeholder {
   justify-content: center;
 }
 
-.preloader--bar {
-  position: relative;
-  width: 750px;
-  height: 15px;
-  background: #181818;
-  border-radius: 6px;
-}
-
-.preloader--bar-loader {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 0;
-  background: var(--accent-color);
-  transition: width 2.2s ease-in-out;
-  height: 15px;
-  border-radius: 6px;
-}
-
 .preloader--counter {
   position: absolute;
-  top: 10%;
+  top: 50%;
   right: 50%;
-  transform: translateX(50%);
+  transform: translate(50%, -50%);
 }
 
 .preloader--counter span {
   font-size: 20rem;
-  color: #121212;
+  color: #181818;
   cursor: default;
 }
 

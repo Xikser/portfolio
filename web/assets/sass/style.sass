@@ -329,34 +329,16 @@ $progress-bar-height: 15px
         align-items: center
         justify-content: center
 
-    &--bar
-        position: relative
-        width: 750px
-        height: $progress-bar-height
-        background: $disabled-color / 3
-        border-radius: $border-radius / 2
-
-    &--bar-loader
-        position: absolute
-        content: ''
-        top: 0
-        left: 0
-        width: 0
-        background: $accent-color
-        transition: width 2.2s ease-in-out
-        height: $progress-bar-height
-        border-radius: $border-radius / 2
-
     &--counter
         position: absolute
-        top: 10%
+        top: 50%
         right: 50%
-        transform: translateX(50%)
+        transform: translate(50%, -50%)
 
         span
             font:
                 size: 20rem
-            color: $disabled-color / 4
+            color: $disabled-color / 3
             cursor: default
 
 @media screen and (max-width: 736px)

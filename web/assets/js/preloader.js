@@ -29,18 +29,6 @@ const createPreloaderContainer = () => {
     })
 }
 
-const createPercentBar = () => {
-    return new Promise((resolve) => {      
-        const bar = document.createElement('div')
-        const barLoader = document.createElement('div')
-        bar.classList.add('preloader--bar')
-        barLoader.classList.add('preloader--bar-loader')
-
-        bar.appendChild(barLoader)
-        resolve(bar, barLoader)
-    })
-}
-
 const createPreloaderCounter = () => {
     return new Promise((resolve) => {
         const counter = document.createElement('div')
@@ -62,16 +50,8 @@ const addPreloaderToBody = (preloader) => {
     })
 }
 
-const loadPreloader = (preloader, bar, counter) => {
-    const barLoader = bar.children[0]
-    loadBar(barLoader)
+const loadPreloader = (preloader, counter) => {
     loadCounter(preloader, counter)
-}
-
-const loadBar = (bar) => {
-    setTimeout(() => {
-        bar.style.width = '100' + '%'
-    }, 0)
 }
 
 const loadCounter = (preloader, counterParent) => {
@@ -86,7 +66,7 @@ const loadCounter = (preloader, counterParent) => {
             clearInterval(counter)
             hidePreloader(preloader)
         }
-    }, 19.5);
+    }, 20);
 
 }
 
@@ -102,14 +82,12 @@ const hidePreloader = (preloader) => {
 
 async function contructPreloaderContent(preloader) {
     const container = await createPreloaderContainer()
-    const bar = await createPercentBar()
     const counter = await createPreloaderCounter()
 
     container.appendChild(counter)
-    container.appendChild(bar)
     preloader.appendChild(container)
 
-    loadPreloader(preloader, bar, counter)
+    loadPreloader(preloader, counter)
 
     return preloader;   
 }
