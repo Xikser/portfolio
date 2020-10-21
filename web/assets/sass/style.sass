@@ -306,41 +306,6 @@ textarea
     background: rgba(0, 0, 0, .8)
     z-index: 47
 
-$progress-bar-height: 15px
-
-.preloader
-    position: fixed
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    display: flex
-    flex-direction: row
-    z-index: 10000
-    opacity: 1
-    transition: opacity 1s ease
-
-    &--container
-        position: relative
-        width: 100%
-        height: 100%
-        background: black
-        display: flex
-        align-items: center
-        justify-content: center
-
-    &--counter
-        position: absolute
-        top: 50%
-        right: 50%
-        transform: translate(50%, -50%)
-
-        span
-            font:
-                size: 20rem
-            color: $disabled-color / 3
-            cursor: default
-
 @media screen and (max-width: 736px)
     .viewer
 
@@ -376,18 +341,6 @@ $progress-bar-height: 15px
 
         &__buttons
             bottom: 120px
-
-    .preloader
-
-        &--container
-            padding: 0 25px
-
-        &--counter
-            top: 25%
-
-            span
-                font:
-                    size: 10rem
 
 footer
     padding: 25px

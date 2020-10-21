@@ -328,42 +328,6 @@ textarea:focus::placeholder {
   z-index: 47;
 }
 
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  z-index: 10000;
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-.preloader--container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preloader--counter {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-}
-
-.preloader--counter span {
-  font-size: 20rem;
-  color: #181818;
-  cursor: default;
-}
-
 @media screen and (max-width: 736px) {
   .viewer__image-container i {
     top: 30%;
@@ -398,15 +362,6 @@ textarea:focus::placeholder {
   }
   .viewer__buttons {
     bottom: 120px;
-  }
-  .preloader--container {
-    padding: 0 25px;
-  }
-  .preloader--counter {
-    top: 25%;
-  }
-  .preloader--counter span {
-    font-size: 10rem;
   }
 }
 
