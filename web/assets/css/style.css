@@ -1461,4 +1461,13 @@ footer {
   background: #585858;
   transform: translateX(27px);
 }
+
+@media screen and (max-width: 980px) {
+  .panel {
+    background: #252525;
+  }
+  .panel .row--follower {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */
