@@ -15,6 +15,7 @@ const header = document.querySelector('.header');
 const about = document.querySelector('.about');
 const skills = document.querySelector('.skills');
 const projects = document.querySelector('.portfolio');
+const other = document.querySelector('.portfolio--other');
 const contact = document.querySelector('.contact')
 
 const navbar = document.querySelector('.nav');
@@ -26,6 +27,7 @@ document.querySelectorAll('.link--home').forEach(e => linkMap.set(e, header));
 document.querySelectorAll('.link--about').forEach(e => linkMap.set(e, about));
 document.querySelectorAll('.link--skills').forEach(e => linkMap.set(e, skills));
 document.querySelectorAll('.link--projects').forEach(e => linkMap.set(e, projects));
+document.querySelectorAll('.link--projects-other').forEach(e => linkMap.set(e, other));
 document.querySelectorAll('.link--contact').forEach(e => linkMap.set(e, contact));
 
 for(const link of linkMap.keys()) {
