@@ -1,4 +1,4 @@
-section.portfolio--other
+section.portfolio.portfolio--other
     h3.section__title Other projects
     .portfolio__content
         .portfolio__box
@@ -19,20 +19,25 @@ section.portfolio--other
 
             .viewer
                 .viewer__content
-
-                    .viewer__image-box.viewer__image-box--width
+                    .viewer__image-box.viewer__image-box--width.viewer__image-box--margin-reset
                         img(src="images/logos/ligalogo.png")
 
                     h3.viewer__title ZSE E-sport League
 
-                    p.viewer__text ZSE E-Sport League was a small school project that has grown to a national scale cs:go tournament, entirely prepared, run and managed by students. My first task was to create a website with team registration in PHP (never again). It was my first website, so it had been coded terribly, but it worked :D
-                    p.viewer__text I was also responsible for cs:go servers, voice servers, technical aspect of streaming during the LAN finals, and I also managed a group of 5 administrators, that I had to train in server maintenance beforehand.
-                    p.viewer__text Several of my friends, whom I trained to handle cs:go servers and conducting matches, worked / work in ESL as a game administrator after the end of the project.
+                    .mobile-scroll-anim
+                        .mobile-scroll
+                            i.fas.fa-hand-pointer
 
-                    .viewer__buttons
-                        a.button.button--viewer(href="https://istotne.pl/boleslawiec/wiadomosc/nSc/lepiej-by-dziecko-gralo-w-lidze-e-sport-niz-bawilo-sie-na-trzepaku" target="_blank") Interview
-                        a.button.button--viewer(href="projects/liga" target="_blank") Website preview
-                        a.button.button--viewer(href="https://www.youtube.com/channel/UCm2jWq-OA-fUquxFYoEMRww" target="_blank") Youtube
+                    .viewer__scroll-container
+                        .viewer__scroll-content
+                            p.viewer__text ZSE E-Sport League was a small school project that has grown to a national scale cs:go tournament, entirely prepared, run and managed by students. My first task was to create a website with team registration in PHP (never again). It was my first website, so it had been coded terribly, but it worked :D
+                            p.viewer__text I was also responsible for cs:go servers, voice servers, technical aspect of streaming during the LAN finals, and I also managed a group of 5 administrators, that I had to train in server maintenance beforehand.
+                            p.viewer__text Several of my friends, whom I trained to handle cs:go servers and conducting matches, worked / work in ESL as a game administrator after the end of the project.
+
+                        .viewer__buttons.viewer__buttons--bottom-reset
+                            a.button.button--viewer(href="https://istotne.pl/boleslawiec/wiadomosc/nSc/lepiej-by-dziecko-gralo-w-lidze-e-sport-niz-bawilo-sie-na-trzepaku" target="_blank") Interview
+                            a.button.button--viewer(href="projects/liga" target="_blank") Website preview
+                            a.button.button--viewer(href="https://www.youtube.com/channel/UCm2jWq-OA-fUquxFYoEMRww" target="_blank") Youtube
 
                 i.fas.fa-times
 

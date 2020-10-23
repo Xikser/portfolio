@@ -263,6 +263,13 @@ textarea
         &:hover
             transform: rotate(90deg)
 
+    &__scroll-container
+        overflow-x: hidden
+        overflow-y: hidden
+
+    &__scroll-content
+        min-height: 100%
+
     &__image-box
         position: relative
         margin-top: 100px
@@ -306,6 +313,10 @@ textarea
     background: rgba(0, 0, 0, .8)
     z-index: 47
 
+.mobile-scroll-anim
+    display: none
+
+
 @media screen and (max-width: 736px)
     .viewer
 
@@ -325,12 +336,21 @@ textarea
     .viewer
         width: 100%
         top: 0
-        height: 100vh
+        min-height: 736px
+        max-height: 736px
+        height: 736px
         z-index: 150
         border-radius: 0
 
         &__content
-            padding: 0 20px
+            padding: 0 20px   
+
+        &__scroll-container
+            overflow-x: hidden
+            overflow-y: scroll
+
+        &__scroll-content
+            min-height: 500px 
 
         &__image-box
             margin-top: 70px
@@ -339,8 +359,32 @@ textarea
                 width: 100%
                 height: 200px
 
+            &--margin-reset
+                margin-top: 20px
+
         &__buttons
+            position: relative
             bottom: 120px
+
+    .mobile-scroll-anim
+        display: flex
+        position: relative
+        width: 20px
+        height: 20px
+        top: 25px
+        left: 52%
+
+        .mobile-scroll
+            position: relative
+            width: 20px
+            height: 20px
+            top: 0
+
+        i.fas.fa-hand-pointer
+            position: absolute
+            animation: scroll 1.5s infinite
+            font:
+                size: 1.5rem
 
 footer
     padding: 25px
@@ -356,6 +400,5 @@ footer
 @import 'about'
 @import 'skills'
 @import 'portfolio'
-@import 'other'
 @import 'contact'
 @import 'panel/panel'
