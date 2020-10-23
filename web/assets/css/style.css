@@ -281,6 +281,15 @@ textarea:focus::placeholder {
   transform: rotate(90deg);
 }
 
+.viewer__scroll-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.viewer__scroll-content {
+  min-height: 100%;
+}
+
 .viewer__image-box {
   position: relative;
   margin-top: 100px;
@@ -328,6 +337,10 @@ textarea:focus::placeholder {
   z-index: 47;
 }
 
+.mobile-scroll-anim {
+  display: none;
+}
+
 @media screen and (max-width: 736px) {
   .viewer__image-container i {
     top: 30%;
@@ -346,12 +359,21 @@ textarea:focus::placeholder {
   .viewer {
     width: 100%;
     top: 0;
-    height: 100vh;
+    min-height: 736px;
+    max-height: 736px;
+    height: 736px;
     z-index: 150;
     border-radius: 0;
   }
   .viewer__content {
     padding: 0 20px;
+  }
+  .viewer__scroll-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .viewer__scroll-content {
+    min-height: 500px;
   }
   .viewer__image-box {
     margin-top: 70px;
@@ -360,8 +382,31 @@ textarea:focus::placeholder {
     width: 100%;
     height: 200px;
   }
+  .viewer__image-box--margin-reset {
+    margin-top: 20px;
+  }
   .viewer__buttons {
+    position: relative;
     bottom: 120px;
+  }
+  .mobile-scroll-anim {
+    display: flex;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 25px;
+    left: 52%;
+  }
+  .mobile-scroll-anim .mobile-scroll {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 0;
+  }
+  .mobile-scroll-anim i.fas.fa-hand-pointer {
+    position: absolute;
+    animation: scroll 1.5s infinite;
+    font-size: 1.5rem;
   }
 }
 
