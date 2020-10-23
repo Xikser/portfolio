@@ -385,7 +385,7 @@ textarea:focus::placeholder {
   .viewer__image-box--margin-reset {
     margin-top: 20px;
   }
-  .viewer__buttons {
+  .viewer__buttons--position-reset {
     position: relative;
     bottom: 120px;
   }
