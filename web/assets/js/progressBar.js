@@ -1,8 +1,17 @@
 //console.log(window.pageYOffset)
 const bar = document.querySelectorAll('.bar');
 const boxArray = document.querySelectorAll('.skills__box');
-const activateHeight = 1040;
-const disableHeight = 1970;
+
+//desktop height
+const activateDesktopHeight = 1040;
+const disableDesktopHeight = 1970;
+
+//mobile height
+const activateMobileHeight = 650;
+const disableMobileHeight = 1330;
+
+//szerokość mniejsza równa 736
+//wysokość mniejsza od 480
 
 window.addEventListener('scroll', loadContent);
 
@@ -12,13 +21,38 @@ function loadContent() {
     for(const box of boxArray) {    
         const levelSpan = box.children[1];
         const hoverBar = box.children[2].children[0];
+
+        const deviceWidth = getDeviceWidth()
+        const deviceHeight = getDeviceHeight()
+
+        //desktop and mobile vertical view
+        if(deviceHeight > 736 && deviceWidth > 980 || deviceHeight <= 980 && deviceWidth < 480) {
+            if(windowHeight >= activateDesktopHeight && windowHeight < disableDesktopHeight) {
+                getLevel(box, levelSpan, hoverBar);
+            } else if(windowHeight < activateDesktopHeight || windowHeight > disableDesktopHeight) {
+                unloadContent(levelSpan, hoverBar);
+            }
+        } 
         
-        if(windowHeight >= activateHeight && windowHeight < disableHeight) {
-            getLevel(box, levelSpan, hoverBar);
-        } else if(windowHeight < activateHeight || windowHeight > disableHeight){
-            unloadContent(levelSpan, hoverBar);
-        }
+        //mobile horizontal view
+        else if(deviceHeight < 480 && deviceWidth <= 736) {
+            if(windowHeight >= activateMobileHeight && windowHeight < disableMobileHeight) {
+                getLevel(box, levelSpan, hoverBar);
+            } else if(windowHeight < activateMobileHeight || windowHeight > disableMobileHeight) {
+                unloadContent(levelSpan, hoverBar);
+            }
+        }   
     }
+}
+
+function getDeviceWidth() {
+    const width = window.innerWidth;
+    return width;
+}
+
+function getDeviceHeight() {
+    const height = window.innerHeight;
+    return height
 }
 
 function getLevel(box, levelSpan, hoverBar) {
