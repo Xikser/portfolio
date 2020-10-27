@@ -10,6 +10,16 @@ function scrollTop() {
     window.scrollTo(0, 0)
 }
 
+function getDeviceWidth() {
+    const width = window.innerWidth;
+    return width;
+}
+
+function getDeviceHeight() {
+    const height = window.innerHeight;
+    return height
+}
+
 //navbar
 const header = document.querySelector('.header');
 const about = document.querySelector('.about');
