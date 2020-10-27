@@ -1,4 +1,3 @@
-//console.log(window.pageYOffset)
 const bar = document.querySelectorAll('.bar');
 const boxArray = document.querySelectorAll('.skills__box');
 
@@ -9,9 +8,6 @@ const disableDesktopHeight = 1970;
 //mobile height
 const activateMobileHeight = 650;
 const disableMobileHeight = 1330;
-
-//szerokość mniejsza równa 736
-//wysokość mniejsza od 480
 
 window.addEventListener('scroll', loadContent);
 
