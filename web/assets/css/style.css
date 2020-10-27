@@ -341,6 +341,12 @@ textarea:focus::placeholder {
   display: none;
 }
 
+@media screen and (max-width: 736px), screen and (max-height: 480px) {
+  .content {
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 736px) {
   .viewer__image-container i {
     top: 30%;
@@ -507,6 +513,12 @@ footer {
 .map__box span {
   cursor: default;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 736px), screen and (max-height: 480px) {
+  .map {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -890,6 +902,12 @@ footer {
   width: 100%;
 }
 
+@media screen and (max-width: 736px), screen and (max-height: 480px) {
+  .about__content {
+    padding: 0 15px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .about {
     height: 100vh;
@@ -1134,6 +1152,12 @@ footer {
 .portfolio__logos-box .tech--logo {
   width: 30px;
   height: 30px;
+}
+
+@media screen and (max-width: 736px), screen and (max-height: 480px) {
+  .portfolio__content {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
