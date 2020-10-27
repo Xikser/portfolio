@@ -31,10 +31,10 @@ document.querySelectorAll('.link--projects-other').forEach(e => linkMap.set(e, o
 document.querySelectorAll('.link--contact').forEach(e => linkMap.set(e, contact));
 
 for(const link of linkMap.keys()) {
-    link.addEventListener('click', detectWidth);
+    link.addEventListener('click', detectSectionWidthForNavbar);
 }
 
-function detectWidth() {
+function detectSectionWidthForNavbar() {
     const section = linkMap.get(this)
     var deviceWidth = window.innerWidth;
     scrollPage(section, deviceWidth);
