@@ -45,16 +45,6 @@ function loadContent() {
     }
 }
 
-function getDeviceWidth() {
-    const width = window.innerWidth;
-    return width;
-}
-
-function getDeviceHeight() {
-    const height = window.innerHeight;
-    return height
-}
-
 function getLevel(box, levelSpan, hoverBar) {
     const level = box.children[1].getAttribute('level');
     loadSpan(level, levelSpan);
