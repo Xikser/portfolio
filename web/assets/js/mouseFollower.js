@@ -10,22 +10,37 @@ var targets = [
     '.panel__icon'
 ];
 
-window.addEventListener('mousemove', mouseFollow)
 
-function mouseFollow(e) {
+const hideFollower = (mouseFollower) => {
+    mouseFollower.style.opacity = '0';
+}
+
+const showFollower = (mouseFollower) => {
+    mouseFollower.style.opacity = '.5';
+}
+
+const setTarget = (mouseFollower) => {
+    mouseFollower.classList.add('mouse-follower--target')
+}
+
+const removeTarget = (mouseFollower) => {
+    mouseFollower.classList.remove('mouse-follower--target')
+}
+
+const mouseFollow = (e) => {
     const mouseFollower = document.querySelector('.mouse-follower')
-
+    
     setTimeout(() => {
         mouseFollower.style.left = e.pageX + 'px';
         mouseFollower.style.top = e.pageY + 'px';
     }, 50)
-
+    
     if (e.target.matches(targets)) {
         setTarget(mouseFollower);
     } else {
         removeTarget(mouseFollower);
     }
-
+    
     if (e.target.matches('.circle')) {
         hideFollower(mouseFollower);
     } else {
@@ -38,18 +53,14 @@ function mouseFollow(e) {
     }
 }
 
-function hideFollower(mouseFollower) {
-    mouseFollower.style.opacity = '0';
+const onOffFollower = () => {
+    const deviceWidth = getDeviceWidth();
+
+    if(deviceWidth > 980) {
+        window.addEventListener('mousemove', mouseFollow)
+    } else {
+        window.removeEventListener('mousemove', mouseFollow)
+    }
 }
 
-function showFollower(mouseFollower) {
-    mouseFollower.style.opacity = '.5';
-}
-
-function setTarget(mouseFollower) {
-    mouseFollower.classList.add('mouse-follower--target')
-}
-
-function removeTarget(mouseFollower) {
-    mouseFollower.classList.remove('mouse-follower--target')
-}
+onOffFollower();
