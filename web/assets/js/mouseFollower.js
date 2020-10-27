@@ -18,7 +18,7 @@ function mouseFollow(e) {
     setTimeout(() => {
         mouseFollower.style.left = e.pageX + 'px';
         mouseFollower.style.top = e.pageY + 'px';
-    }, 100)
+    }, 50)
 
     if (e.target.matches(targets)) {
         setTarget(mouseFollower);
